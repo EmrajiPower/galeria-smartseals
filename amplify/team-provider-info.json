@@ -1,0 +1,19 @@
+{
+    "prueba": {
+        "awscloudformation": {
+            "AuthRoleName": "galeria-aws-prueba-20190811175857-authRole",
+            "UnauthRoleArn": "arn:aws:iam::495321048957:role/galeria-aws-prueba-20190811175857-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::495321048957:role/galeria-aws-prueba-20190811175857-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "galeria-aws-prueba-20190811175857-deployment",
+            "UnauthRoleName": "galeria-aws-prueba-20190811175857-unauthRole",
+            "StackName": "galeria-aws-prueba-20190811175857",
+            "StackId": "arn:aws:cloudformation:us-east-2:495321048957:stack/galeria-aws-prueba-20190811175857/9aa659a0-bc8b-11e9-bcc4-026465bb0bfc"
+        },
+        "categories": {
+            "auth": {
+                "galeriaawsf0bbac7f": {}
+            }
+        }
+    }
+}

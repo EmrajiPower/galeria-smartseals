@@ -1,0 +1,15 @@
+{
+	"auth": {
+		"galeriaawsf0bbac7f": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"storage": {
+		"galeriaAWS": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
