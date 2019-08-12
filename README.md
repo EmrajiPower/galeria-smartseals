@@ -25,7 +25,7 @@ El directorio del proyecto cuenta con componentes y carpetas que se mezclan con 
 
 ![](src/imagenes/captura2.png)
 
-Para envíar el proyecto a producción se debe ejecutar el comando `npm run deploy` despuesés de haber asegurado un `npm run build` e insertar en los `scripts` de `package.json` el siguiente código: `"deploy": "aws s3 sync build/ s3://[NOMBRE_DEL_BUCKET]"`.
+Para envíar el proyecto a producción se debe ejecutar el comando `npm run deploy` despues de haber asegurado un `npm run build` e insertar en los `scripts` de `package.json` el siguiente código: `"deploy": "aws s3 sync build/ s3://[NOMBRE_DEL_BUCKET]"`.
 
 Finalmente, se suben las carperas de la imagenes dentro del **Bucket**, las cuales serán recuperadas asíncronamente y mostradas de manera estática:
 
