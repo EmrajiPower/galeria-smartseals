@@ -21,7 +21,7 @@ El proyecto se compila de manera local en `localhost:3000` ejecutando `npm run s
 
 ![](src/imagenes/captura1.png)
 
-El directorio del proyecto cuenta con componentes y carpetas que se mezclan con react y la librería usada, la ejecución de React se mantiene, pero los fiecheros deben prepararse para producción y debe ejecutarse el comando `npm run build`. En la consola de administración de Amazon Web Services creamos un **Bucket**, el cual debe modificarse con una [política de seguridad](https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/example-bucket-policies.html) pública y activar el servicio de [sitios web estáticos](https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/WebsiteHosting.html).
+El directorio del proyecto cuenta con componentes y carpetas que se mezclan con react y con la configuración de la otra librería usada, la ejecución de React se mantiene, pero los ficheros deben prepararse para producción y debe ejecutarse el comando `npm run build`. En la consola de administración de Amazon Web Services creamos un **Bucket**, el cual debe modificarse con una [política de seguridad](https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/example-bucket-policies.html) pública y activar el servicio de [sitios web estáticos](https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/WebsiteHosting.html).
 
 ![](src/imagenes/captura2.png)
 
