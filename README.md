@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Galería SmartSeals 
 
-## Available Scripts
+Proyecto para gestionar imágenes que se encuentran en directorios alojados en el sistema de almacenamiento **S3 de Amazon**.
+Para más información de los servicios de Amazón click [aquí](https://aws.amazon.com/es/s3/faqs/?nc=sn&loc=7).
 
-In the project directory, you can run:
+## Desarrollo
 
-### `npm start`
+Uso de librerías:
+- [x] **[React](https://www.npmjs.com/package/create-react-app)**: instalado `create-react-app`, dependencia `react-router-dom`.
+- [x] **[Amplify](https://aws-amplify.github.io/docs/js/start)**: SDK de Amplify con Javascript. Manejo de **S3** con `Amplify configure`, `Amplify push`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Uso de CLI:
+- [x] **[AWS CLI](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-install.html)**: Configuración llaves de acceso para **S3 Buckets** con `aws configure`.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Uso de Templates:
+- [x] **[Multiverse HTML template](https://html5up.net/multiverse)**: Plantilla para mostrar las imágenes.
 
-### `npm test`
+##  Generalidades
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+El proyecto se compila de manera local en `localhost:3000` ejecutando `npm run start`. 
 
-### `npm run build`
+![](src/imagenes/captura1.png)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+El directorio del proyecto cuenta con componentes y carpetas que se mezclan con react y la librería usada, la ejecución de React se mantiene, pero los fiecheros deben prepararse para producción y debe ejecutarse el comando `npm run build`. En la consola de administración de Amazon Web Services creamos un **Bucket**, el cual debe modificarse con una [política de seguridad](https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/example-bucket-policies.html) pública y activar el servicio de [sitios web estáticos](https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/WebsiteHosting.html).
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+![](src/imagenes/captura2.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para envíar el proyecto a producción se debe ejecutar el comando `npm run deploy` despuesés de haber asegurado un `npm run build` e insertar en los `scripts` de `package.json` el siguiente código: `"deploy": "aws s3 sync build/ s3://[NOMBRE_DEL_BUCKET]"`.
 
-### `npm run eject`
+Finalmente, se suben las carperas de la imagenes dentro del **Bucket**, las cuales serán recuperadas asíncronamente y mostradas de manera estática:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![](src/imagenes/captura3.png)
